@@ -37,9 +37,18 @@ namespace ToDoList.Controllers
 
     public ActionResult Details(int id)
     {
+        Dictionary<string, object> model = new Dictionary<string, object>();
         Category thisCategory = _db.Categories.FirstOrDefault(category => category.CategoryId == id);
-        return View(thisCategory);
+        List<Item> categoryItems = _db.Items.Where(item => item.CategoryId == id).ToList();
+        model.Add("category", thisCategory);
+        model.Add("itemList", categoryItems);
+        return View(model);
     }
+
+    [HttpPost]
+    public ActionResult Create(Item item)
+    {
+        }
     
     // [HttpGet("/categories")]
     // public ActionResult Index()

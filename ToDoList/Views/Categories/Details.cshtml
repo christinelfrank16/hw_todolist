@@ -10,7 +10,7 @@
 <hr />
 <h3>@Html.DisplayNameFor(model => (Category) model["category"].Name): @Html.DisplayFor(model => (Category) model["category"].Name)<h3>
 
-@if(Model["itemList"].Count == 0)
+@if((List<Item>) Model["itemList"].Count == 0)
 {
 <p> There  are no items in this category!</p>
 <p>@Html.ActionLink("Add one here!", "Create", "Item")</p>

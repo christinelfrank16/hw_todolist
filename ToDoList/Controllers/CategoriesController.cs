@@ -45,10 +45,10 @@ namespace ToDoList.Controllers
         return View(model);
     }
 
-    [HttpPost]
-    public ActionResult Create(Item item)
-    {
-        }
+    // [HttpPost]
+    // public ActionResult Create(Item item)
+    // {
+    //     }
     
     // [HttpGet("/categories")]
     // public ActionResult Index()

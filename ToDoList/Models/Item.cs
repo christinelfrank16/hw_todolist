@@ -82,7 +82,7 @@ namespace ToDoList.Models
       MySqlConnection conn = DB.Connection();
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
-      cmd.CommandText = @"DELETE FROM items;";
+      cmd.CommandText = @"TRUNCATE TABLE items;";
       cmd.ExecuteNonQuery();
       conn.Close();
       if (conn != null)
